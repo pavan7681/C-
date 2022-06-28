@@ -1,0 +1,49 @@
+
+#include<iostream>
+using namespace std;
+int factorial(int f) {
+    if (f == 0) {
+        return 1;
+    }
+    else {
+        return f * factorial(f - 1);
+    }
+}
+
+void palindrome(int n) {
+    int temp = n;
+    int s = 0;
+    while (temp > 0) {
+        s = s * 10 + (temp % 10); 
+        temp =  temp / 10;
+    }
+    if (s == n) {
+        cout << "the given number is palindorme" << endl;
+    }
+    else {
+        cout << "the given number is not a palindrome" << endl;
+    }
+}
+int main() {
+    int a = 10,n;
+    cout << "Just Started C++" << endl;
+    cout << "the value of a is : " << a << endl;;
+    cout << "enter the user input : "<<endl;
+    cin >> n;
+    cout << "value entered by the user is : " << n << endl;
+    cout << "taking the array input : "  << endl;
+    int arr[n];
+    for (int i = 0;i < n;i++) {
+        cin >> arr[i];
+    }
+    for(int  i = 0;i < n;i++) {
+        cout << arr[i] << endl;
+    }
+    cout << "factorial of 5 is " << factorial(5) << endl;
+    cout << "enter the number to check whether palindrome or not:"<< endl;
+    int num;
+    cin >> num;
+    palindrome(num);
+    
+    return 0;
+}
